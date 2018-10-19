@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <context-param>
+        <param-name>JDBC_DRIVER</param-name>
+        <param-value>com.mysql.cj.jdbc.Driver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>USER</param-name>
+        <param-value>root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>PASS</param-name>
+        <param-value>password</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>searchInfo</servlet-name>
+        <servlet-class>Student.searchInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchInfo</servlet-name>
+        <url-pattern>/searchInfo</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>searchAllInfo</servlet-name>
+        <servlet-class>Student.searchAllInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>searchAllInfo</servlet-name>
+        <url-pattern>/searchAllInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addInfo</servlet-name>
+        <servlet-class>Student.addInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addInfo</servlet-name>
+        <url-pattern>/addInfo</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>deleteInfo</servlet-name>
+        <servlet-class>Student.deleteInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteInfo</servlet-name>
+        <url-pattern>/deleteInfo</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>changeInfo</servlet-name>
+        <servlet-class>Student.changeInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>changeInfo</servlet-name>
+        <url-pattern>/changeInfo</url-pattern>
+    </servlet-mapping>
+
+</web-app>
