@@ -15,14 +15,14 @@ public class Login extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("password");
 
-        List<String> info = new ArrayList<>();
+        List<String> info = new ArrayList<>(); //用一个list保存登录结果
 
         if(name == null || name.equals("")) { //用户名格式问题
             info.add("用户名不能为空");
             System.out.println("用户名不能为空");
         }
 
-        if(password == null || password.equals("")) {
+        if(password == null || password.equals("")) { //密码格式问题
             info.add("密码不能为空");
             System.out.println("密码不能为空");
         }

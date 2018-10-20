@@ -16,7 +16,7 @@ public class Proxy implements iUser {
         boolean flag = false;
         flag = iuser.findLogin(user);
 
-        dbc.close();
+        dbc.close(); //关闭数据库连接
 
         return flag;
     }

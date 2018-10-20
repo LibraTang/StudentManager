@@ -20,23 +20,30 @@
     %>
 
     <%
-        List<String> info = (List<String>) request.getAttribute("info");
+        List<String> info = (List<String>) request.getAttribute("info"); //得到结果
         String s;
+
+        //若用户有登录操作，则信息不为空
         if(info != null) {
             Iterator<String> iterator = info.iterator();
             while(iterator.hasNext()) {
                 s = iterator.next();
+                //若登录成功则跳转到首页
                 if (s.equals("登录成功")) {
                     response.sendRedirect("home.jsp");
                 }
+                //登录不成功提示错误
                 else {
     %>
-    <h4><%=s%></h4>
+
+    <h4><%=s%></h4> //显示错误
+
     <%
                 }
             }
         }
     %>
+
     <form action="/Login" method="post" onsubmit="return validate(this)">
         用户名：<input type="text" name="name"><br>
         密码：<input type="password" name="password"><br>
