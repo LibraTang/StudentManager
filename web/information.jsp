@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
-  User: LibraTang
+  Users: LibraTang
   Date: 2018/10/18
   Time: 9:52
   To change this template use File | Settings | File Templates.
@@ -9,21 +9,21 @@
 <%@ page contentType="text/html;charset=utf-8" pageEncoding="utf-8" language="java" %>
 <html>
 <head>
-    <title>Search Students Information</title>
+    <title>学生信息</title>
 </head>
 <div align="center">
     <body>
-        <h1>Search Students Information</h1>
+        <h1>学生信息</h1>
         <table align="center" width="100%" border="1">
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Sex</th>
-                <th>Age</th>
-                <th>College</th>
-                <th>Major</th>
-                <th>Phone</th>
-                <th>Operate</th>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>学院</th>
+                <th>专业</th>
+                <th>联系方式</th>
+                <th>操作</th>
             </tr>
 
             <%
@@ -54,7 +54,9 @@
             <%}%>
         </table>
         <br>
-        <button onclick="{location.href='index.jsp'}">返回首页</button>
+        <button onclick="{location.href='addInfo.jsp'}">添加学生信息</button>
+        <br><br>
+        <button onclick="{location.href='home.jsp'}">返回首页</button>
     </body>
 </div>
 </html>
