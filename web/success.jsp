@@ -12,7 +12,7 @@
 </head>
 <div align="center">
     <body>
-        <h1 align="center">SUCCESS!</h1>
+        <h1>SUCCESS!</h1>
         <br><br>
         <button onclick="{location.href='home.jsp'}">返回首页</button>
     </body>
