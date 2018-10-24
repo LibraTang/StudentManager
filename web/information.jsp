@@ -1,5 +1,8 @@
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%><%--
   Created by IntelliJ IDEA.
   Users: LibraTang
   Date: 2018/10/18
@@ -30,28 +33,21 @@
                 request.setCharacterEncoding("UTF-8");
             %>
 
-            <%
-                List<Map> list = (List)request.getAttribute("list");
-                for(Map map : list) {
-            %>
-                    <tr>
-                        <td><%=map.get("id")%></td>
-                        <td><%=map.get("name")%></td>
-                        <td><%=map.get("sex")%></td>
-                        <td><%=map.get("age")%></td>
-                        <td><%=map.get("college")%></td>
-                        <td><%=map.get("major")%></td>
-                        <td><%=map.get("phone")%></td>
-                        <td>
-                            <a href="/deleteInfo?id=<%=map.get("id")%>">删除</a>
-                            <a
-                                href="/changeInfo.jsp?id=<%=map.get("id")%>&name=<%=map.get("name")%>&sex=<%=map.get("sex")%>
-                                &age=<%=map.get("age")%>&college=<%=map.get("college")%>&major=<%=map.get("major")%>
-                                &phone=<%=map.get("phone")%>">
-                            修改</a>
-                        </td>
-                    </tr>
-            <%}%>
+            <c:forEach items="${list}" var="usr">
+                <tr>
+                    <td>${usr.id}</td>
+                    <td>${usr.name}</td>
+                    <td>${usr.sex}</td>
+                    <td>${usr.age}</td>
+                    <td>${usr.college}</td>
+                    <td>${usr.major}</td>
+                    <td>${usr.phone}</td>
+                    <td>
+                        <a href="/deleteInfo?id=${usr.id}">删除</a>
+                        <a href="changeInfo.jsp?id=${usr.id}&name=${usr.name}&sex=${usr.sex}&age=${usr.age}&college=${usr.college}&major=${usr.major}&phone=${usr.phone}">修改</a>
+                    </td>
+                </tr>
+            </c:forEach>
         </table>
         <br>
         <button onclick="{location.href='addInfo.jsp'}">添加学生信息</button>
